@@ -1,6 +1,6 @@
 require './app.rb'
 
-RSpec.feature 'Player names', :type => :feature do
+feature 'Player names', :type => :feature do
   scenario "Players enter their names" do
     visit ('/')
     fill_in "player_1", :with => "Dan"
