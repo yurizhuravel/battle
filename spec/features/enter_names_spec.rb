@@ -1,4 +1,4 @@
-require '.././app.rb'
+require './app.rb'
 
 RSpec.feature 'Player names', :type => :feature do
   scenario "Players enter their names" do
