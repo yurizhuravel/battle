@@ -1,8 +1,19 @@
+<style>
+h2 {
+    text-align: center;
+} </style>
+<h2> Please enter your names to start the battle</h2>
 
+<center>
 <div id="name form">
   <form action="/names" method="post">
-    <input type="text" name="player_1" />
-    <input type="text" name="player_2" />
-    <input type ="submit" value="Submit names" />
+    <label for="player_1_name"> Player 1
+      <input type="text" name="player_1">
+    </label>
+    <label for="player_e_name"> Player 2
+      <input type="text" name="player_2">
+    </label>
+    <p> <input type ="submit" value="Submit names" /> </p>
   </form>
 </div>
+</center>
