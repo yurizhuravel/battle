@@ -1,8 +1,9 @@
 require 'player'
 
-describe 'Player' do
+describe Player do
 
   subject(:chuck) {Player.new('Chuck')}
+  subject(:wayne) {Player.new('Wayne')}
 
   describe "#name" do
     it 'returns the name' do
@@ -10,4 +11,20 @@ describe 'Player' do
     end
   end
 
+  describe '#hit_points' do
+    it 'returns the hit points' do
+      expect(chuck.hit_points).to eq described_class::DEFAULT_HIT_POINTS
+    end
+  end
+  describe '#attack' do
+    it 'damages the player' do
+      expect(wayne).to receive(:receive_damage)
+      chuck.attack(wayne)
+    end
+  end
+  describe '#recieve_damage' do
+    it 'reduces the player hit points' do
+      expect {chuck.receive_damage}.to change {chuck.hit_points}.by(-10)
+    end
+  end
 end
