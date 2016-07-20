@@ -10,4 +10,12 @@
 <h2> <%= @player2%> <%=@player2_hp %>hp </h2>
 
 
+<form action="/player1_attacks" method="post">
+  <input type="submit" value="Attack" style = "margin-top: 15px;">
+</form>
+
 </body>
+
+<% if @player1_attacks%>
+  <p>Player 1 attacked player 2</p>
+<% end %>
