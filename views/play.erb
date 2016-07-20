@@ -5,10 +5,10 @@
 
 <body style="font-family: 'Orbitron', sans-serif; width: 500px; margin: 30px auto; text-align: center;">
 
-<h1><%=@player1.name%> vs. <%=@player2.name%></h1>
+<h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
 
-<h2> <%= @player1.name%> <%=@player1.hitpoints %>hp</h2>
-<h2> <%= @player2.name%> <%=@player2.hitpoints %>hp </h2>
+<h2> <%= @game.player1.name%> <%=@game.player1.hitpoints %>hp</h2>
+<h2> <%= @game.player2.name%> <%=@game.player2.hitpoints %>hp </h2>
 
 
 <form action="/player1_attacks" method="post">
@@ -19,5 +19,5 @@
 
 <% if @player1_attacks%>
   <p>Player 1 attacked player 2</p>
-    <p>Player 2 has <%=@player2.hitpoints %>hp </p>
+    <p>Player 2 has <%=@game.player2.hitpoints %>hp </p>
 <% end %>

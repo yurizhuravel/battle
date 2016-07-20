@@ -12,4 +12,6 @@ attr_reader :name, :hitpoints
   def receive_damage
     @hitpoints -= 10
   end
+
+
 end
