@@ -3,7 +3,6 @@ require './lib/player'
 require './lib/game'
 
 class Battle < Sinatra::Base
-
   enable :sessions
 
   get '/' do
@@ -11,14 +10,16 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(params[:player_1_name], params[:player_2_name])
+    player1 = Player.new(params[:player_1_name])
+    player2 = Player.new(params[:player_2_name])
+    $game = Game.new(player1, player2)
     redirect '/play'
   end
-
 
   post '/player1_attacks' do
     session[:player1_attacks] = true
     $game.attack($game.player2)
+    $game.switch_turn($game.current_turn)
     redirect '/play'
   end
 

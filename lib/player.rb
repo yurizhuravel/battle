@@ -13,5 +13,4 @@ attr_reader :name, :hitpoints
     @hitpoints -= 10
   end
 
-
 end

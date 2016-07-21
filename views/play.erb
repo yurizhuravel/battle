@@ -3,16 +3,17 @@
 <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
-<body style="font-family: 'Orbitron', sans-serif; width: 500px; margin: 30px auto; text-align: center;">
+<body style="width: 500px; margin: 30px auto; text-align: center;">
 
 <h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
 
 <h2> <%= @game.player1.name%> <%=@game.player1.hitpoints %>hp</h2>
 <h2> <%= @game.player2.name%> <%=@game.player2.hitpoints %>hp </h2>
 
+<h2> Current Turn: <%= @game.current_turn.name%></h2>
 
 <form action="/player1_attacks" method="post">
-  <input type="submit" value="Attack" style = "margin-top: 15px;">
+  <input type="submit" value="Attack" id="submit" style = "margin-top: 15px;">
 </form>
 
 </body>
