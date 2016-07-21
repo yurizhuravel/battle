@@ -16,10 +16,14 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
-  post '/player1_attacks' do
+  post '/attack' do
     $game.attack($game.opponent)
     $game.switch_turn($game.current_turn)
-    redirect '/play'
+    if $game.player1.hitpoints == 0 || $game.player2.hitpoints == 0
+      redirect '/game_over'
+    else
+      redirect '/play'
+    end
   end
 
   get '/play' do
@@ -28,6 +32,7 @@ class Battle < Sinatra::Base
   end
 
   get '/game_over' do
+    @game = $game
     erb :game_over
   end
 
