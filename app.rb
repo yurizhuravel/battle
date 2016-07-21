@@ -19,7 +19,7 @@ class Battle < Sinatra::Base
   post '/attack' do
     $game.attack($game.opponent)
     $game.switch_turn($game.current_turn)
-    if $game.player1.hitpoints == 0 || $game.player2.hitpoints == 0
+    if $game.player1.hitpoints <= 0 || $game.player2.hitpoints <= 0
       redirect '/game_over'
     else
       redirect '/play'

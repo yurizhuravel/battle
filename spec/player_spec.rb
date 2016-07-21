@@ -18,8 +18,8 @@ describe Player do
 
   describe '#receive_damage' do
     it 'receives damage' do
-      player2.receive_damage
-      expect(player2.hitpoints).to eq 90
+      allow(player2).to receive(:random_num).and_return(15)
+      expect{player2.receive_damage}.to change{player2.hitpoints}.by(-15)
     end
   end
 
