@@ -1,19 +1,27 @@
-<style>
-h2 {
-    text-align: center;
-} </style>
-<h2> Please enter your names to start the battle</h2>
+<!doctype html>
+<html>
+  <head>
+    <style>
+      <link rel="stylesheet" type="text/css" href="styles.css" />
 
-<center>
-<div id="name form">
-  <form action="/names" method="post">
-    <label for="player_1_name"> Player 1
-      <input type="text" name="player_1">
-    </label>
-    <label for="player_2_name"> Player 2
-      <input type="text" name="player_2">
-    </label>
-    <p> <input type ="submit" value="Submit names" /> </p>
-  </form>
-</div>
-</center>
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h2> Please enter your names to start the battle</h2>
+
+      <div id="name form">
+        <form action="/names" method="post">
+          <label for="player_1_name"> Player 1
+            <input type="text" name="player_1">
+          </label>
+          <label for="player_2_name"> Player 2
+            <input type="text" name="player_2">
+          </label>
+          <p> <input type ="submit" value="Submit names" /> </p>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>
