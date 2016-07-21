@@ -1,8 +1,12 @@
 <center>
-<h2> Its a hit! </h2>
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>
+  <h2> Its a hit! </h2>
+  <%= @game.players[1].name %> attacked <%= @game.whos_turn.name %> 
 
+  <p> <%= @game.players[0].name %>: <%= @game.players[0].hit_points %>HP </p>
 
-
-<p> <%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP </p>
+  <div id="next_turn_button">
+    <form action="/play">
+      <input type ="submit" value="Next turn" />
+    </form>
+  </div>
 </center>

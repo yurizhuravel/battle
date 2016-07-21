@@ -1,9 +1,11 @@
 <center>
-<h2> <%= @game.player_1.name %> vs. <%= @game.player_2.name %> </h2>
+<h2> <%= @game.players[0].name %> vs. <%= @game.players[1].name %> </h2>
 
 <p> Both players starting with 60HP </p>
-<p> <%= @game.player_1.name %>: 60HP </p>
-<p> <%= @game.player_2.name %>: 60HP </p>
+<p> <%= @game.players[0].name %>: <%= @game.players[0].hit_points %>HP</p>
+<p> <%= @game.players[1].name %>: <%= @game.players[1].hit_points %>HP</p>
+
+<p> <%= @game.whos_turn.name%>'s turn</p>
 
 
 
