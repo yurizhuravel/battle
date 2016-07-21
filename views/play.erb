@@ -13,15 +13,19 @@
 <h2> Current Turn: <%= @game.current_turn.name%></h2>
 
 <form action="/player1_attacks" method="post">
-  <input type="submit" value="Attack" id="submit" style = "margin-top: 15px;">
+  <input type="submit" value="Attack!" id="round" style = "margin-top: 15px;">
 </form>
 
-</body>
-
+<div class = "attacking">
 <% if @game.attacking == @game.player1%>
+<img src = "grump-cat.png" align="right">
   <p><%= @game.player1.name%> attacked <%= @game.player2.name%></p>
     <p><%= @game.player2.name%> has <%=@game.player2.hitpoints %>hp </p>
 <% elsif @game.attacking == @game.player2%>
+<img src = "grump-cat2.png" align="left">
   <p><%= @game.player2.name%> attacked <%= @game.player1.name%></p>
   <p><%= @game.player1.name%> has <%=@game.player1.hitpoints %>hp </p>
 <% end %>
+</div>
+
+</body>
