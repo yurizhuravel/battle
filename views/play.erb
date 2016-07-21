@@ -18,7 +18,10 @@
 
 </body>
 
-<% if @player1_attacks%>
+<% if @game.attacking == @game.player1%>
   <p><%= @game.player1.name%> attacked <%= @game.player2.name%></p>
     <p><%= @game.player2.name%> has <%=@game.player2.hitpoints %>hp </p>
+<% elsif @game.attacking == @game.player2%>
+  <p><%= @game.player2.name%> attacked <%= @game.player1.name%></p>
+  <p><%= @game.player1.name%> has <%=@game.player1.hitpoints %>hp </p>
 <% end %>

@@ -17,15 +17,13 @@ class Battle < Sinatra::Base
   end
 
   post '/player1_attacks' do
-    session[:player1_attacks] = true
-    $game.attack($game.player2)
+    $game.attack($game.opponent)
     $game.switch_turn($game.current_turn)
     redirect '/play'
   end
 
   get '/play' do
     @game = $game
-    @player1_attacks = session[:player1_attacks]
     erb :play
   end
 

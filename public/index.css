@@ -1,3 +1,4 @@
+
 body {
     background: url("space4.jpg") no-repeat center center;
     background-size: cover;
@@ -5,6 +6,7 @@ body {
     color: white;
     text-align: center;
     font-family: 'Orbitron', sans-serif;
+    margin-top: 500px;
 }
 
 input {
