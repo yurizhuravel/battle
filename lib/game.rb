@@ -9,6 +9,14 @@ class Game
     @opponent = player2
   end
 
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.instance
+    @game
+  end
+
   def player1
     @players.first
   end
@@ -32,6 +40,16 @@ class Game
   def attack(player)
     player.receive_damage
     @attacking = @current_turn
+  end
+
+  def game_over?
+    !losing_players.empty?
+  end
+
+# private
+
+  def losing_players
+    @players.select { |player| player.hitpoints <=0 }
   end
 
 end

@@ -30,4 +30,15 @@ end
     end
   end
 
+  describe 'game _over?' do
+    it 'returns true if losing_players is not empty' do
+      allow(subject).to receive(:losing_players).and_return([player1])
+      expect(subject.game_over?).to eq true
+    end
+    it 'returns false if losing_players is empty' do
+      allow(subject).to receive(:losing_players).and_return([])
+      expect(subject.game_over?).to eq false
+    end
+  end
+
 end
