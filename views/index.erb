@@ -1,8 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
 
-<div id="name form">
-  <form action="/names" method="post">
-    <input type="text" name="player_1" />
-    <input type="text" name="player_2" />
-    <input type ="submit" value="Submit names" />
-  </form>
-</div>
+  <body>
+    <center>
+      <h2> Please enter your names to start the battle</h2>
+
+      <div id="name_form">
+        <form action="/names" method="post">
+          <label for="player_1_name"> Player 1
+            <input type="text" name="player_1_name">
+          </label>
+          <label for="player_2_name"> Player 2
+            <input type="text" name="player_2_name">
+          </label>
+          <p> <input type ="submit" value="Submit names" /> </p>
+        </form>
+      </div>
+    </center>
+  </body>
+</html>

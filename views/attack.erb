@@ -1,0 +1,12 @@
+<center>
+  <h2> Its a hit! </h2>
+  <%= @game.whos_turn.name %> attacked <%= @game.opponent.name %>
+
+  <p> <%= @game.opponent.name %>: <%= @game.opponent.hit_points %>HP </p>
+
+  <div id="next_turn_button">
+    <form action="/change_turn" method="post">
+      <input type ="submit" value="Next turn" />
+    </form>
+  </div>
+</center>
