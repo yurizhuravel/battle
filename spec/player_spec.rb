@@ -18,7 +18,7 @@ describe Player do
 
   describe '#receive_damage' do
     it 'receives damage' do
-      allow(player2).to receive(:random_num).and_return(15)
+      allow(Kernel).to receive(:rand).and_return(15)
       expect{player2.receive_damage}.to change{player2.hitpoints}.by(-15)
     end
   end

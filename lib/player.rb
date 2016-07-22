@@ -9,12 +9,8 @@ attr_reader :name, :hitpoints
     @hitpoints = DEFAULT_HITPOINTS
   end
 
-  def random_num
-    rand(20)
-  end
-
   def receive_damage
-    @hitpoints -= random_num
+    @hitpoints -= Kernel.rand(5..20)
   end
 
 end

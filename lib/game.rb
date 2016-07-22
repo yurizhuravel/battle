@@ -24,6 +24,9 @@ class Game
       @current_turn = @players[0]
     end
     @opponent = current_turn
+    # @players.rotate!
+    # @current_turn = @players[0]
+    # @opponent = @players[1]
   end
 
   def attack(player)
