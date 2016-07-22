@@ -38,7 +38,7 @@ h1 {
   padding-top: 50px
 }
 
-#round{
+.round{
 width:100px;
 height:100px;
 background-color:#ff0000;
@@ -53,10 +53,15 @@ border-radius: 50px;
 box-shadow: 2px 2px 15px rgba(0,0,0, .75);
 }
 
-#round:hover{
+.round:hover{
 background:#c20b0b;
 border:1px solid #c20b0b;
 -webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 -moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
 box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+}
+
+#roundblue {
+  background-color:#3399ff;
+  border:1px solid #3399ff;
 }

@@ -39,6 +39,10 @@ end
       allow(subject).to receive(:losing_players).and_return([])
       expect(subject.game_over?).to eq false
     end
+    it 'returns the correct winner' do
+      allow(subject).to receive(:losing_players).and_return([player1])
+      expect(subject.winner).to eq player2
+    end
   end
 
 end

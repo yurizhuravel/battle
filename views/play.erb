@@ -5,24 +5,32 @@
 
 <body style="width: 500px; margin: 30px auto; text-align: center;">
 
-<h1><%=@game.player1.name%> vs. <%=@game.player2.name%></h1>
+<h1><span style="color:red"><%=@game.player1.name%></span> vs. <span style="color:#3399ff"><%=@game.player2.name%></span></h1>
 
 <h2> <%= @game.player1.name%> <%=@game.player1.hitpoints %>hp</h2>
 <h2> <%= @game.player2.name%> <%=@game.player2.hitpoints %>hp </h2>
 
 <h2> Current Turn: <%= @game.current_turn.name%></h2>
 
+<% if @game.current_turn == @game.player1%>
 <form action="/attack" method="post">
-  <input type="submit" value="Attack!" id="round" style = "margin-top: 15px;">
+  <input type="submit" value="Attack!" class="round" style = "margin-top: 15px;">
 </form>
+<% elsif @game.current_turn == @game.player2%>
+<form action="/attack" method="post">
+  <input type="submit" value="Attack!" class="round" id="roundblue" style = "margin-top: 15px;">
+</form>
+<% end %>
 
 <div class = "attacking">
 <% if @game.attacking == @game.player1%>
-<img src = "grump-cat.png" align="right">
+<img src = "grump-cat2.png" align="left">
+<img src = "grump-cat3.png" align="right">
   <p><%= @game.player1.name%> attacked <%= @game.player2.name%></p>
     <p><%= @game.player2.name%> has <%=@game.player2.hitpoints %>hp </p>
 <% elsif @game.attacking == @game.player2%>
-<img src = "grump-cat2.png" align="left">
+<img src = "grump-cat4.png" align="left">
+<img src = "grump-cat.png" align="right">
   <p><%= @game.player2.name%> attacked <%= @game.player1.name%></p>
   <p><%= @game.player1.name%> has <%=@game.player1.hitpoints %>hp </p>
 <% end %>

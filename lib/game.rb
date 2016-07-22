@@ -32,9 +32,6 @@ class Game
       @current_turn = @players[0]
     end
     @opponent = current_turn
-    # @players.rotate!
-    # @current_turn = @players[0]
-    # @opponent = @players[1]
   end
 
   def attack(player)
@@ -46,7 +43,12 @@ class Game
     !losing_players.empty?
   end
 
-# private
+  def winner
+    winner = @players - losing_players
+    winner[0]
+  end
+
+private
 
   def losing_players
     @players.select { |player| player.hitpoints <=0 }
